@@ -146,6 +146,85 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/01/%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92002/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lccwxg">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="舒越の博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/01/%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92002/" class="post-title-link" itemprop="url">欧拉计划002</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-01 13:01:48 / 修改时间：13:06:05" itemprop="dateCreated datePublished" datetime="2021-05-01T13:01:48+08:00">2021-05-01</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>582</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="偶斐波那契数"><a href="#偶斐波那契数" class="headerlink" title="偶斐波那契数"></a>偶斐波那契数</h2><p>斐波那契数列中的每一项都是前两项的和。由1和2开始生成的斐波那契数列的前10项为：</p>
+<p>1,2,3,5,8,13,21,34,55,89,…</p>
+<p>考虑该斐波那契数列中不超过四百万的项，求其中为偶数的项之和。</p>
+<h4 id="C实现"><a href="#C实现" class="headerlink" title="C实现"></a>C实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> f1 = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> f2 = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (f1 &lt; <span class="number">4000000</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (f1 % <span class="number">2</span> == <span class="number">0</span> )</span><br><span class="line">            sum = sum + f1;</span><br><span class="line">        <span class="keyword">if</span> (f2 % <span class="number">2</span> == <span class="number">0</span> )</span><br><span class="line">            sum = sum + f2;</span><br><span class="line">        f1 = f1 + f2;</span><br><span class="line">        f2 = f1 + f2;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, sum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="Rust实现"><a href="#Rust实现" class="headerlink" title="Rust实现"></a>Rust实现</h4><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut</span> f1 = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut</span> f2 = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> f1 &lt; <span class="number">4000_000</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> f1 % <span class="number">2</span> == <span class="number">0</span> &#123;</span><br><span class="line">            sum = sum + f1;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">if</span> f2 % <span class="number">2</span> == <span class="number">0</span> &#123;</span><br><span class="line">            sum = sum + f2;</span><br><span class="line">        &#125;;</span><br><span class="line">        f1 = f1 + f2;</span><br><span class="line">        f2 = f1 + f2;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;&#123;&#125;&quot;</span>, sum);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/01/%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92001/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -377,7 +456,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
